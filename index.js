@@ -11,7 +11,6 @@ selectTag.forEach((tag, id) =>{
         "en-GB" ? "selected" : "" : country_code ==
         "de-DE" ? "selected" : "";
         let option = `<option ${selected} value="${country_code}">${countries[country_code]}</option>`;
-        //the line above, figure out how the hell to do that because if you type it out, the ${} becomes part of the 'option' expression instead of acting as a selector
         tag.insertAdjacentHTML("beforeend", option);
     }
 }
