@@ -39,6 +39,7 @@ translateBtn.addEventListener("click", ()=>{
     toText.setAttribute("placeholder", "Translating...");
 
     let apiUrl = `https://api.mymemory.translated.net/get?q=${text}&langpair=${translateFrom}|${translateTo}`
+    // API doesn't recognize lesser known languages in the text to speech version so it's a bit weird
     fetch(apiUrl).then(res => res.json()).then(data =>{
         toText.value = data.responseData.translatedText;
         data.matches.forEach(data =>{
